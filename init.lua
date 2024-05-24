@@ -507,6 +507,22 @@ require('lazy').setup({
             },
           },
         },
+
+        intelephense = {
+          init_options = {
+            licenceKey = '/home/mafavreau/.config/intelephense/licence.txt',
+          },
+        },
+        bashls = {},
+        cssls = {},
+        docker_compose_language_service = {},
+        dockerls = {},
+        graphql = {},
+        html = {},
+        sqlls = {},
+        tailwindcss = {},
+        typos_lsp = {},
+        yamlls = {},
       }
 
       -- Ensure the servers and tools above are installed
@@ -823,5 +839,7 @@ require('lazy').setup({
   },
 })
 
+-- Personal import
+require 'custom.core.mappings'
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
