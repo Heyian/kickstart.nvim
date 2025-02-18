@@ -5,4 +5,8 @@
 return {
   'navarasu/onedark.nvim',
   'norcalli/nvim-colorizer.lua',
+  {
+    'fladson/vim-kitty',
+    ft = 'kitty',
+  },
 }
