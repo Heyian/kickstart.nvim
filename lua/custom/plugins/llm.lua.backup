@@ -1,0 +1,24 @@
+return {
+  'huggingface/llm.nvim',
+  opts = {
+    model = 'codestral:latest',
+    backend = 'ollama',
+    url = 'http://localhost:11434', -- llm-ls uses "/api/generate"
+    tokens_to_clear = { '<|endoftext|>' },
+    request_body = {
+      parameters = {
+        max_new_tokens = 60,
+        temperature = 0.2,
+        top_p = 0.95,
+      },
+    },
+    debounce_ms = 300,
+    accept_keymap = '<Tab>',
+    dismiss_keymap = '<S-Tab>',
+    lsp = {
+      bin_path = vim.api.nvim_call_function('stdpath', { 'data' }) .. '/mason/bin/llm-ls',
+    },
+    enable_suggestions_on_startup = true,
+    enable_suggestions_on_file = '*',
+  },
+}
